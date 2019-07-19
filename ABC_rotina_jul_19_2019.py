@@ -180,7 +180,7 @@ def ABC(fitness,trial,f,Foods,GlobMin,GlobPars,MIN,MAX,Fun,prob):
   f,GlobMin,GlobPars= initial(fitness,trial,f,Foods,GlobMin,GlobPars,MIN,MAX,Fun)
   GlobMin,GlobPars,Foods=BestSource(GlobMin,GlobPars,Foods,f)
 
-  trial,Foods=EmployedBees(trial,Foods,MIN,MAX,Fun)
+  trial,Foods=EmployedBees(trial,Foods,MIN,MAX,Fun,fitness)
   fitness,prob=CalcProb(fitness,prob)
   trial,Foods=OnlookerBees(trial,Foods,MIN,MAX,Fun)
   GlobMin,GlobPars,Foods=BestSource(GlobMin,GlobPars,Foods,f)
