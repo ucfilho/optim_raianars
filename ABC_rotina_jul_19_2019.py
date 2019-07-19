@@ -175,7 +175,7 @@ def ScoutBees(fitness,f,Foods,trial,MIN,MAX):
     trial,f,fitness=init(max_trial,Foods,trial,f,fitness,MIN,MAX,Fun)
   return trial,Foods
 
-def ABC(fitness,trial,f,Foods,GlobMin,GlobPars,MIN,MAX,Fun,prob,fitness):
+def ABC(fitness,trial,f,Foods,GlobMin,GlobPars,MIN,MAX,Fun,prob):
 #def ABC(fitness,f,Foods,trial,MIN,MAX):
   f,GlobMin,GlobPars= initial(fitness,trial,f,Foods,GlobMin,GlobPars,MIN,MAX,Fun)
   GlobMin,GlobPars,Foods=BestSource(GlobMin,GlobPars,Foods,f)
