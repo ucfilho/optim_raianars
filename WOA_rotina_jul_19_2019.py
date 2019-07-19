@@ -114,3 +114,16 @@ def WOA(x,k,ITE,PAR,NPAR,MAX,MIN,Fun): # realiza todas interacoes do WOA
   
   ycal=Fun(Best)
   return Best,ycal,x
+"""
+# inicializa as variaveis, executa o metdo e imprime os resultados
+NPAR=200 #Baleias
+ITE=50 #ITERACOES
+PAR=2 #NUM DE PARAMETROS A SER OTIMIZADOS
+MAX=[2,2] # MAXIMO DE CADA PARAMETRO
+MIN=[-2,-2] # MINIMO DE CADA PARAMETRO
+x=Enxame(PAR,NPAR,MAX,MIN) # inicializa baleias
+for i in range(ITE):
+  Best,ycal,x=WOA(x,i,ITE,PAR,NPAR,MAX,MIN)
+
+print("Whales=",NPAR,"      Ite",ITE,"   x=",Best,"       fobj=",ycal,"\n")
+"""
