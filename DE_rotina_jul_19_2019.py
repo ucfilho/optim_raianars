@@ -36,7 +36,7 @@ def de(MAX,MIN, mut, crossp, popsize, its,fobj,X):
   min_b, max_b = np.asarray(bounds).T
   diff = np.fabs(min_b - max_b)
   
-  
+  pop=np.zeros((popsize,Num))
 
     
   for i in range(popsize):
