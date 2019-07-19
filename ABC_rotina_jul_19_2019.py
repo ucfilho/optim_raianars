@@ -30,7 +30,7 @@ def CalcFit(fun):
   return top;
 """
 
-def BestSource(GlobMin,GlobPars,Foods):
+def BestSource(GlobMin,GlobPars,Foods,f):
   FoodNumber=len(Foods[:,0])
   D=len(Foods[0,:])
   solution=np.zeros(D)
@@ -178,12 +178,12 @@ def ScoutBees(fitness,f,Foods,trial,MIN,MAX):
 def ABC(fitness,trial,f,Foods,GlobMin,GlobPars,MIN,MAX,Fun,prob):
 #def ABC(fitness,f,Foods,trial,MIN,MAX):
   f,GlobMin,GlobPars= initial(fitness,trial,f,Foods,GlobMin,GlobPars,MIN,MAX,Fun)
-  GlobMin,GlobPars,Foods=BestSource(GlobMin,GlobPars,Foods)
+  GlobMin,GlobPars,Foods=BestSource(GlobMin,GlobPars,Foods,f)
 
   trial,Foods=EmployedBees(trial,Foods,MIN,MAX,Fun)
   fitness,prob=CalcProb(fitness,prob)
   trial,Foods=OnlookerBees(trial,Foods,MIN,MAX,Fun)
-  GlobMin,GlobPars,Foods=BestSource(GlobMin,GlobPars,Foods)
+  GlobMin,GlobPars,Foods=BestSource(GlobMin,GlobPars,Foods,f)
   trial,Foods=ScoutBees(fitness,f,Foods,trial,MIN,MAX)
   x=Foods
   y=f
