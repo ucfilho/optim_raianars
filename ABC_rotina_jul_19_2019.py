@@ -165,7 +165,7 @@ def OnlookerBees(trial,Foods,MIN,MAX, Fun,prob,fitness,f):
         i=0
   return trial,Foods
 
-def ScoutBees(fitness,f,Foods,trial,MIN,MAX):
+def ScoutBees(fitness,f,Foods,trial,MIN,MAX,limit):
   FoodNumber=len(Foods[:,0])
   max_trial=0
   for i in range(1,FoodNumber):
@@ -184,7 +184,7 @@ def ABC(fitness,trial,f,Foods,GlobMin,GlobPars,MIN,MAX,Fun,prob,limit):
   fitness,prob=CalcProb(fitness,prob)
   trial,Foods=OnlookerBees(trial,Foods,MIN,MAX,Fun,prob,fitness,f)
   GlobMin,GlobPars,Foods=BestSource(GlobMin,GlobPars,Foods,f)
-  trial,Foods=ScoutBees(fitness,f,Foods,trial,MIN,MAX)
+  trial,Foods=ScoutBees(fitness,f,Foods,trial,MIN,MAX,limit)
   x=Foods
   y=f
   BEST=GlobPars
