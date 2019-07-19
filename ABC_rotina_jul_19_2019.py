@@ -119,7 +119,7 @@ def CalcProb(fitness,prob):
     prob[i]=(0.9*(fitness[i]/maxfit))+0.1
   return fitness,prob
 
-def OnlookerBees(trial,Foods,MIN,MAX, Fun,prob,fitness):
+def OnlookerBees(trial,Foods,MIN,MAX, Fun,prob,fitness,f):
   D=len(Foods[0,:])
   solution=np.zeros(D)
   FoodNumber=len(Foods[:,0])
@@ -182,7 +182,7 @@ def ABC(fitness,trial,f,Foods,GlobMin,GlobPars,MIN,MAX,Fun,prob):
 
   trial,Foods=EmployedBees(trial,Foods,MIN,MAX,Fun,fitness,f)
   fitness,prob=CalcProb(fitness,prob)
-  trial,Foods=OnlookerBees(trial,Foods,MIN,MAX,Fun,prob,fitness)
+  trial,Foods=OnlookerBees(trial,Foods,MIN,MAX,Fun,prob,fitness,f)
   GlobMin,GlobPars,Foods=BestSource(GlobMin,GlobPars,Foods,f)
   trial,Foods=ScoutBees(fitness,f,Foods,trial,MIN,MAX)
   x=Foods
