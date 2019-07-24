@@ -104,7 +104,8 @@ def Schwefel(x):
         new=x[i]*np.sin((abs(x[i]))**0.5)
         summ=summ+new
 #        print(summ)
-    return (418.9829*len(x)-summ)    
+    #return (418.9829*len(x)-summ)
+    return (418.982887272433799807913601398*len(x)-summ)
 
 # Global optimum: f(xi)= 0 for xi = 420.968746 for i=1,...,n  ;  xi in [-500,500] 
     
