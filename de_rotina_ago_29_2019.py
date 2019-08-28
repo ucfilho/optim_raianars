@@ -16,10 +16,10 @@ Original file is located at
 
 import numpy as np
 
-def de(MAX,MIN, mut, crossp, popsize, its,fobj,X):
+def de(MAX,MIN, mut, crossp, popsize, its,fobj,X,SOMA,TOTAL):
   
-  global TOTAL
-  global SOMA
+  #global TOTAL
+  #global SOMA
   
   
   Num=len(MAX)
@@ -87,7 +87,7 @@ def de(MAX,MIN, mut, crossp, popsize, its,fobj,X):
   BEST_XY =np.append(BEST,FOBEST)
   
   
-  return x,BEST,FOBEST,XY,BEST_XY
+  return x,BEST,FOBEST,XY,BEST_XY,SOMA
 
 '''N=5
 M=4
