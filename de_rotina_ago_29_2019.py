@@ -17,12 +17,18 @@ Original file is located at
 import numpy as np
 
 def de(MAX,MIN, mut, crossp, popsize, its,fobj,X,SOMA,TOTAL):
-  
-  #global TOTAL
-  #global SOMA
-  
-  
+    
   Num=len(MAX)
+  
+  XOLD=X
+  X=np.zeros((popsize,Num)) 
+    
+  for i in range(popsize):
+    for j in range(Num):
+        X[i,j]=np.copy(XOLD[i,j])
+  
+  
+  
   bounds=[(0,0)] * Num
   dimensions = len(bounds)  
   
@@ -86,8 +92,11 @@ def de(MAX,MIN, mut, crossp, popsize, its,fobj,X,SOMA,TOTAL):
   XY=XYsorted
   BEST_XY =np.append(BEST,FOBEST)
   
+  for i in range(popsize):
+    for j in range(Num):
+        XOLD[i,j]=np.copy(X[i,j])
   
-  return x,BEST,FOBEST,XY,BEST_XY,SOMA
+  return XOLD,BEST,FOBEST,XY,BEST_XY,SOMA
 
 '''N=5
 M=4
