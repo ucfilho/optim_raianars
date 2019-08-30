@@ -88,5 +88,6 @@ def de(MAX,MIN, mut, crossp, popsize, its,fobj,X,SOMA,TOTAL):
   for i in range(popsize):
     for j in range(Num):
         XOLD[i,j]=np.copy(X[i,j])
-  
-  return XOLD,BEST,FOBEST,XY,BEST_XY,SOMA
+        
+  INDICE=[500,100,100,100,500,100,100,100,100,100]
+  return XOLD,BEST,FOBEST,XY,BEST_XY,SOMA,INDICE
