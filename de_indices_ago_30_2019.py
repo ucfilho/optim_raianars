@@ -97,11 +97,14 @@ def de(MAX,MIN, mut, crossp, popsize, its,fobj,X,SOMA,TOTAL,QUANT):
         Xj=np.mean(X[:,j])
         soma=soma+(X[i,j]-Xj)**2
   DI=(soma/popsize)**0.5
-    
+  
+  # DI Indice:  Radka Polakova, Josef Tvrdik, Petr Bujok 
+  # Differential evolution with adaptative mechanism of population size according to current diversity
+  
         
         
   INDICE[0]=DI
-  INDICE[1]=5
+  INDICE[1]=1e99 # este indice vai ser modificado externamente
   INDICE[2]=30    
 
         
