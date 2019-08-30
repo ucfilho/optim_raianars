@@ -9,9 +9,9 @@ Original file is located at
 
 import numpy as np
 
-def de(MAX,MIN, mut, crossp, popsize, its,fobj,X,SOMA,TOTAL):
+def de(MAX,MIN, mut, crossp, popsize, its,fobj,X,SOMA,TOTAL,QUANT):
     
-  QUANT=10 # quantos indices esta fazendo
+  
   Num=len(MAX)
   
   XOLD=X
