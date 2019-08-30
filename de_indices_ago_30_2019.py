@@ -38,10 +38,16 @@ def de(MAX,MIN, mut, crossp, popsize, its,fobj,X,SOMA,TOTAL,QUANT):
   
   for i in range(its):
     if(SOMA>TOTAL):
+      soma_ind=0
       break
+    else:
+      soma_ind=SOMA
     for j in range(popsize):
       if(SOMA>TOTAL):
+        soma_ind=0
         break
+      else:
+        soma_ind=SOMA
       SOMA=SOMA+1
       
       idxs = [idx for idx in range(popsize) if idx != j]
@@ -104,7 +110,7 @@ def de(MAX,MIN, mut, crossp, popsize, its,fobj,X,SOMA,TOTAL,QUANT):
         
         
   INDICE[0]=DI
-  INDICE[1]=1e99 # este indice vai ser modificado externamente
+  INDICE[1]=soma_ind # este indice vai ser modificado externamente
   INDICE[2]=30    
 
         
