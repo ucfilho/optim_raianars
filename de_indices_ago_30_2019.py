@@ -114,7 +114,8 @@ def de(MAX,MIN, mut, crossp, popsize, its,fobj,X,SOMA,TOTAL,QUANT):
         
         
   INDICE[0]=DI
-  INDICE[1]=soma_ind # este indice vai ser modificado externamente
+  #INDICE[1]=soma_ind # este indice vai ser modificado externamente
+  INDICE[1]=1E99 # este indice vai ser modificado externamente
   INDICE[2]=30    
   
 
