@@ -9,12 +9,14 @@ Original file is located at
 
 import numpy as np
 
-def de(MAX,MIN, mut, crossp, popsize, its,fobj,X,SOMA,TOTAL):
-    
+def de(MAX,MIN, mut, crossp, popsize, its,fobj,X,SOMA,TOTAL,PARTIC):
+  SIZE=len(PARTIC) # TAMANHO DO VETOR  
+  QUANT=10
   Num=len(MAX)
   
   XOLD=X
   X=np.zeros((popsize,Num)) 
+  INDICE=np.zeros((SIZE,QUANT)) 
     
   for i in range(popsize):
     for j in range(Num):
@@ -89,5 +91,7 @@ def de(MAX,MIN, mut, crossp, popsize, its,fobj,X,SOMA,TOTAL):
     for j in range(Num):
         XOLD[i,j]=np.copy(X[i,j])
         
-  INDICE=[500,100,100,100,500,100,100,100,100,100]
+  for i in range(SIZE):
+        INDICE[i,0]=PARTIC[i]
+        
   return XOLD,BEST,FOBEST,XY,BEST_XY,SOMA,INDICE
