@@ -9,11 +9,12 @@ Original file is located at
 
 import numpy as np
 
-def de(MAX,MIN, mut, crossp, popsize, its,fobj,X,SOMA,TOTAL):
+def de(MAX,MIN, mut, crossp, popsize, its,fobj,X,SOMA,TOTAL):    
+  Num=len(MAX)
+  XOLD=X
+  X=np.zeros((popsize,Num))
   if(SOMA<TOTAL):
-    Num=len(MAX)
-    XOLD=X
-    X=np.zeros((popsize,Num))
+
     
     for i in range(popsize):
         for j in range(Num):
