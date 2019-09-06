@@ -101,8 +101,8 @@ def de(MAX,MIN, mut, crossp, popsize, its,fobj,X,SOMA,TOTAL,QUANT):
   # DI Indice:  Radka Polakova, Josef Tvrdik, Petr Bujok 
   # Differential evolution with adaptative mechanism of population size according to current diversity
   
-  if(SOMA>TOTAL):
-    SOMA=SOMA-1
+  #if(SOMA>TOTAL):
+  #  SOMA=SOMA-1
         
         
   INDICE[0]=DI
