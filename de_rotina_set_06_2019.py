@@ -41,6 +41,7 @@ def de(MAX,MIN, mut, crossp, popsize, its,fobj,X,SOMA,TOTAL):
       if(SOMA>TOTAL):
         break
       SOMA=SOMA+1
+      print(SOMA)
       
       idxs = [idx for idx in range(popsize) if idx != j]
       a, b, c = X[np.random.choice(idxs, 3, replace = False)]
