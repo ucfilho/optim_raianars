@@ -22,7 +22,7 @@ def de(MAX,MIN, mut, crossp, popsize, its,fobj,X,SOMA,TOTAL):
             X[i,j]=np.copy(XOLD[i,j])
   
   
-    print(X[0,:])
+    print(X[0,:],popsize)
     bounds=[(0,0)] * Num
     dimensions = len(bounds)  
   
