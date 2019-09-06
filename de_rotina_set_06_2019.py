@@ -13,6 +13,7 @@ def de(MAX,MIN, mut, crossp, popsize, its,fobj,X,SOMA,TOTAL):
   Num=len(MAX)
   XOLD=X
   X=np.zeros((popsize,Num))
+  print(" Total=",TOTAL," Soma=",SOMA)
   if(SOMA<TOTAL):
 
     
