@@ -13,7 +13,7 @@ def de(MAX,MIN, mut, crossp, popsize, its,fobj,X,SOMA,TOTAL):
   Num=len(MAX)
   XOLD=X
   X=np.zeros((popsize,Num))
-  print(" Total=",TOTAL," Soma=",SOMA)
+  #print(" Total=",TOTAL," Soma=",SOMA)
   if(SOMA<TOTAL):
 
     
@@ -22,7 +22,7 @@ def de(MAX,MIN, mut, crossp, popsize, its,fobj,X,SOMA,TOTAL):
             X[i,j]=np.copy(XOLD[i,j])
   
   
-  
+    print(X[0,:])
     bounds=[(0,0)] * Num
     dimensions = len(bounds)  
   
