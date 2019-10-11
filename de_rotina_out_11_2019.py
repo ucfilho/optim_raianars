@@ -9,7 +9,8 @@ Original file is located at
 import numpy as np
 
 def de(bounds, mut, crossp, popsize, its,fobj,X):
-
+    
+  Num=len(bounds)
   fitness = np.asarray([fobj(ind) for ind in X])
   best_idx = np.argmin(fitness)
   best = X[best_idx]
@@ -21,10 +22,10 @@ def de(bounds, mut, crossp, popsize, its,fobj,X):
       mutant = a + mut * (b - c)
 
       for k in range(Num):
-        if(mutant[k]>MAX[k]):
-          mutant[k]=MAX[k]
-        if(mutant[k]<MIN[k]):
-          mutant[k]=MIN[k]
+        if(mutant[k]>bounds[k][1]):
+          mutant[k]=bounds[k][1]
+        if(mutant[k]<bounds[k][0]):
+          mutant[k]=bounds[k][0]
           
       cross_points = np.random.rand(dimensions) < crossp
       if not np.any(cross_points):
