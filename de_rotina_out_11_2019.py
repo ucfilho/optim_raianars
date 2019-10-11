@@ -27,9 +27,9 @@ def de(bounds, mut, crossp, popsize, its,fobj,X):
         if(mutant[k]<bounds[k][0]):
           mutant[k]=bounds[k][0]
           
-      cross_points = np.random.rand(dimensions) < crossp
+      cross_points = np.random.rand(Num) < crossp
       if not np.any(cross_points):
-        cross_points[np.random.randint(0, dimensions)] = True
+        cross_points[np.random.randint(0, Num)] = True
 
       trial = np.where(cross_points, mutant, X[j,:])
 
